@@ -1,1 +1,1 @@
-[CATE](https://github.com/inufuto/Cate) version 1.8.0 and [asm8](https://github.com/inufuto/asm8) version 1.7.0.
+[CATE](https://github.com/inufuto/Cate) version 1.10.0 and [asm8](https://github.com/inufuto/asm8) version 1.8.1.
