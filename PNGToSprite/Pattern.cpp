@@ -6,6 +6,7 @@
 #include "stb_image.h"
 
 static const int	gsc_iTileLimit			= 256;		// Tile limit
+static const int	gsc_iTileWidth			= 8;		// Tile width
 static const char*	gsc_szPatternExtension	= ".spr";	// Sprite extension;
 
 Pattern::Pattern()	:
@@ -174,6 +175,7 @@ bool Pattern::grabTile(uint8_t* _pBuffer, int _iX, int _iY)
 	return	true;
 }
 
+// Tiles are encoded from top to bottom left to right base on 8x8 tiles
 bool Pattern::encodeTile(uint8_t* _pSrc)
 {
 	uint8_t*	pSrc	= _pSrc;
@@ -188,7 +190,7 @@ bool Pattern::encodeTile(uint8_t* _pSrc)
 
 	for (int iXLoop = 0; iXLoop < iTilesWide; ++iXLoop)
 	{
-		uint8_t*	pSrc	= _pSrc + iXLoop * m_iSpriteSize;
+		uint8_t*	pSrc	= _pSrc + iXLoop * gsc_iTileWidth;
 
 		for (int iYLoop = 0; iYLoop < m_iSpriteSize; ++iYLoop)
 		{
